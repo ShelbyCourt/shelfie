@@ -8,6 +8,7 @@ class Form extends Component {
       isEditing: false,
       userInput: '',
     }
+    this.baseState = this.state
   }
 
 toggleEdit() {
@@ -40,6 +41,13 @@ handleSaveImage (){
   this.toggleEdit()
 }
 
+submitForm = () => {
+  this.setState(this.state.userInput)
+}
+
+resetForm = () => {
+  this.setState(this.baseState)
+}
 
  render () {
      return (
@@ -48,12 +56,12 @@ handleSaveImage (){
           <p>Image URL: </p>
             <input onChange={(e) => this.handleChange(e)}></input> 
           <p>Product Name: </p>
-            <input></input>
+            <input onChange={(e) => this.handleChange(e)}></input>
           <p>Price: </p>
-            <input></input>
+            <input onChange={(e) => this.handleChange(e)}></input>
 
-          <button>Cancel</button>
-          <button>Add to Inventory</button>
+          <button onClick={this.resetForm} type="button">Cancel</button>
+          <button onClick={this.submitForm} type="button">Add to Inventory</button>
          </div>
   )
  }

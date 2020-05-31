@@ -58,7 +58,7 @@ resetForm = () => {
 
  render () {
      return (
-        <div>
+        <div className="Sideform">
           <h1>Form</h1>
           <p>Image URL: </p>
             <input value={this.state.image} onChange={this.handleSaveImage} />

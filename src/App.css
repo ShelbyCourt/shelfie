@@ -10,13 +10,16 @@ div {
   text-align: left;
 }
 
+div .Sideform {
+  flex-direction: column;
+}
+
 input {
   width: 400px;
 }
 
 button {
   margin: 20px;  
-
 }
 
 p {

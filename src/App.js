@@ -33,8 +33,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Dashboard />
+          <Dashboard 
+          inventoryList={this.state.inventoryList}/>        
+          <div>       
           <Form />
+          </div>
           <Header />
       </header>
       </div>

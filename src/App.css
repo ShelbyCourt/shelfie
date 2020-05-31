@@ -24,6 +24,7 @@ button {
 
 p {
   text-align: left;
+  margin: 1px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

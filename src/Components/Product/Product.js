@@ -8,16 +8,17 @@ class Product extends Component {
 
 
     }
-
-
   }
 
 
-
  render () {
-     return (
+
+    return (
          <div>
              <h2>Product</h2>
+              <p> {this.props.productObj.name} </p>
+              <p> {this.props.productObj.price} </p>
+              <p> {this.props.productObj.image} </p>
          </div>
     )
   }

@@ -5,10 +5,17 @@ class Form extends Component {
   constructor () {
     super()
     this.state = {
-      isEditing: false,
-      userInput: '',
+      name: '',
+      price: 0,
+      image: '' 
+      
+      // isEditing: false,
+      // userInput: '',
     }
     this.baseState = this.state
+    this.handleSaveImage = this.handleSaveImage.bind(this)
+    this.handleSaveName = this.handleSaveName.bind(this)
+    this.handleSavePrice = this.handleSavePrice.bind(this)
   }
 
 toggleEdit() {
@@ -23,22 +30,22 @@ handleChange(e) {
   })
 }
 
-handleSaveName (){
-  const { data } = this.props
-  this.props.saveName(data.id, this.state.userInput)
-  this.toggleEdit()
+handleSaveName (e){
+  this.setState({
+    name: e.target.value
+  });
 }
 
-handleSavePrice (){
-  const { data } = this.props
-  this.props.savePrice(data.price, this.state.userInput)
-  this.toggleEdit()
+handleSavePrice (e){
+  this.setState ({
+    price: e.target.value
+  });
 }
 
-handleSaveImage (){
-  const { data } = this.props
-  this.props.saveImage(data.image, this.state.userInput)
-  this.toggleEdit()
+handleSaveImage (e){
+  this.setState({
+    image: e.target.value
+  });
 }
 
 submitForm = () => {
@@ -54,11 +61,11 @@ resetForm = () => {
         <div>
           <h1>Form</h1>
           <p>Image URL: </p>
-            <input onChange={(e) => this.handleChange(e)}></input> 
+            <input value={this.state.image} onChange={this.handleSaveImage} />
           <p>Product Name: </p>
-            <input onChange={(e) => this.handleChange(e)}></input>
+            <input value={this.state.name} onChange={this.handleSaveName}/>
           <p>Price: </p>
-            <input onChange={(e) => this.handleChange(e)}></input>
+            <input value={this.state.price} onChange={this.handleSavePrice}/>
 
           <button onClick={this.resetForm} type="button">Cancel</button>
           <button onClick={this.submitForm} type="button">Add to Inventory</button>

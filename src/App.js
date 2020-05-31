@@ -8,7 +8,23 @@ class App extends Component {
   constructor (){
   super ()
   this.state = {
-    inventoryList: [('Product1', 65, 'image'), ('Capo', 9, 'image2'), ('Case', 75, 'image3')],
+    inventoryList: [
+      {
+        image: 'imageURL1',
+        name: 'Koa Ukulele',
+        price: 1600     
+      },
+      {
+        image: 'imageURL2',
+        name: 'Spruce & Acacia Uku',
+        price: 595
+      },
+      {
+        image: 'imageURL3',
+        name: 'Ukulele Hardcase',
+        price: 95
+      }
+    ],
   }
 }
 
@@ -17,9 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Dashboard           
-          />
-          console.log(inventoryList)
+          <Dashboard />
           <Form />
           <Header />
       </header>

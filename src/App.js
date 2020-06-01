@@ -27,9 +27,19 @@ class App extends Component {
       // }
     ],
   }
+  this.updateInventoryList = this.updateInventoryList.bind(this)
 }
 
 componentDidMount () {
+  this.updateInventoryList();
+  // Axios.get('/api/inventory').then((res) => {
+  //   this.setState({
+  //     inventoryList: res.data,
+  //   })
+  // })
+}
+
+updateInventoryList () {
   Axios.get('/api/inventory').then((res) => {
     this.setState({
       inventoryList: res.data,
@@ -38,17 +48,20 @@ componentDidMount () {
 }
 
   render () {
-
     return (
       <div className="App">
         <header className="App-header">
+          <Header />
+          <main>
           <Dashboard 
           inventoryList={this.state.inventoryList}/>        
-          <div>       
-          <Form />
-          </div>
-          <Header />
-      </header>
+          </main>
+          <section>             
+          <Form 
+          updateInventoryList={this.updateInventoryList}
+          />
+          </section>          
+        </header>
       </div>
     );
   }

@@ -19,7 +19,8 @@ massive ({
 });
 
 app.get('/api/inventory', ctrl.getInventory);
-app.post('/api/product', ctrl.addProduct);
+app.post('/api/product', ctrl.createProduct);
+// app.delete('/api/')
 
 
 app.listen(SERVER_PORT, () => {

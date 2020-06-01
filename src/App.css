@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 
+}
 div {
   display: flex;
   flex-direction: column;
@@ -10,8 +16,29 @@ div {
   text-align: left;
 }
 
+main {
+  display: block;
+  float: left;
+  width: 400px;
+}
+
+section {
+  display: block;
+  float: right;
+  width: 400px;
+}
+
 div .Sideform {
   flex-direction: column;
+}
+
+div .EachProd {
+  width: 350px;
+  height: 150px;
+  background-color: darkgoldenrod;
+  justify-content: space-around;
+  margin: 10px;
+
 }
 
 input {

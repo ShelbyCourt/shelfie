@@ -11,15 +11,19 @@ module.exports = {
         .catch(err => res.status(500).send(err))
     },
 
-    addProduct: (req, res) => {
-        const {img, name, price} = req.body
+    createProduct: (req, res) => {
+        const {id, name, price, img} = req.body;
+//        const newProduct = {id, name, price, img};
+        const db = req.app.get('db');
+        //products.push(newProduct)
 
-        const newProduct = {img, name, price, id};
-        // console.log(img, name, price, id);
-        products.push(newProduct);
+        db.create_product(id, name, price, img)
+        .then(products => res.status(200).send(products))
+        .catch( err => res.status(500).send(err))
+        //console.log(newProduct);
+        // console.log(price);
+        // console.log(id);
+        //console.log(img)
 
-        id++
-
-        res.status(200).send(products);
-    }
+    },
 }

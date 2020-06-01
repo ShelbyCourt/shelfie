@@ -5,16 +5,13 @@ class Product extends Component {
   constructor () {
     super()
     this.state = {
-
-
     }
   }
-
 
  render () {
 
     return (
-         <div>
+         <div className="EachProd">
              <h2>Product</h2>
               <p> {this.props.productObj.name} </p>
               <p> {this.props.productObj.price} </p>

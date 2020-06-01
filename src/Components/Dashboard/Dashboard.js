@@ -8,8 +8,6 @@ class Dashboard extends Component {
     }
   }
   
-
-
  render (props) {
    const inventoryMap = this.props.inventoryList.map((product) => (<Product 
     // key={product.id}
@@ -28,6 +26,5 @@ class Dashboard extends Component {
     )
   }
 }
-
 
 export default Dashboard
